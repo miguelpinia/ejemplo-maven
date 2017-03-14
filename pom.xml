@@ -40,30 +40,53 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.38</version>
     </dependency>
+    <!-- Agrega mos soporte para java server faces -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-api</artifactId>
+      <version>2.2.8</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-impl</artifactId>
+      <version>2.2.8-19</version>
+    </dependency>
+    <!-- Soporte para primefaces -->
+    <dependency>
+      <groupId>org.primefaces</groupId>
+      <artifactId>primefaces</artifactId>
+      <version>6.0</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>mi-primer-aplicacion-web</finalName>
-	<plugins>
-	  <!-- Set JDK Compiler Level -->
-	  <plugin>
-	    <groupId>org.apache.maven.plugins</groupId>
-	    <artifactId>maven-compiler-plugin</artifactId>
-	    <version>2.3.2</version>
-	    <configuration>
-		  <source>${jdk-version}</source>
-		  <target>${jdk-version}</target>
-	    </configuration>
-	  </plugin>
+    <plugins>
+      <!-- Set JDK Compiler Level -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>${jdk-version}</source>
+          <target>${jdk-version}</target>
+        </configuration>
+      </plugin>
 
-	  <!-- For Maven Tomcat Plugin -->
-	  <plugin>
-	    <groupId>org.apache.tomcat.maven</groupId>
-	    <artifactId>tomcat7-maven-plugin</artifactId>
-	    <version>2.2</version>
-	    <configuration>
-		  <path>/mi-primer-aplicacion-web</path>
-	    </configuration>
-	  </plugin>
+      <!-- For Maven Tomcat Plugin -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <path>/mi-primer-aplicacion-web</path>
+        </configuration>
+      </plugin>
 
     </plugins>
   </build>
