@@ -64,7 +64,7 @@ probar los cambios hechos en su proyecto.
 
 * Páginas disponibles
 
-localhost:8080/mi-primer-aplicacion-web/
-localhost:8080/mi-primer-aplicacion-web/ejemplo.xhtml
-localhost:8080/mi-primer-aplicacion-web/registro.xhtml
-localhost:8080/mi-primer-aplicacion-web/sigin.xhtml
+- localhost:8080/mi-primer-aplicacion-web/
+- localhost:8080/mi-primer-aplicacion-web/ejemplo.xhtml
+- localhost:8080/mi-primer-aplicacion-web/registro.xhtml
+- localhost:8080/mi-primer-aplicacion-web/sigin.xhtml
