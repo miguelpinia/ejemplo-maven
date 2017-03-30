@@ -1,0 +1,70 @@
+#+title: Módulo con ejemplos de JEE, JSF y JPA
+#+author: Miguel Piña
+#+date: [2017-03-30 jue 08:07]
+
+El presente repositorio contiene ejemplos de diversas tecnologías usadas para
+ejemplificar los conceptos vistos en las clases de laboratorio de Ingeniería de
+Software. Las tecnologías revisadas y que están dentro de este repositorio son:
+
+- Maven
+- Java Persistence Api
+- Java Servlets
+- Java Server Faces
+  - Primefaces
+    - BootsFaces
+- Bootstrap
+
+* Compilando y usando el proyecto
+
+** Preparando la base de datos
+
+Para poder usar todas las páginas de este proyecto, es necesario crear una base
+de datos llamada *miPrimerBase* en =MySQL=, esto se hace de la siguiente forma:
+
+#+begin_src sql
+create database miPrimerBase
+#+end_src
+
+Luego crean un usuario de la siguiente forma:
+
+#+begin_src sql
+create user 'miguel'@'localhost' identified by' tfMgDc97GgP4a68WKIHmpKP5O_';
+grant all privileges on miPrimerBase.* to miguel@localhost;
+#+end_src
+
+- Nota :: Si quieren cambiar el nombre del usuario, también es necesario hacerlo
+     en el archivo [[file:src/main/resources/META-INF/persistence.xml][persistence.xml.]]
+
+Después de eso, hay que cargar el script [[file:sql/modelo.sql][modelo.sql]] para que se construya el
+modelo de la base de datos.
+
+** Compilando el proyecto
+
+Cómo este es un proyecto hecho con *Maven*, basta con ingresar el siguiente
+comando en la terminal (en el directorio en el que se encuentra el archivo
+*pom.xml*):
+
+#+begin_src sh
+mvn clean install
+#+end_src
+
+Eso se encarga de compilarlo e instalarlo en el repositorio local de Maven.
+
+** Ejecutando el proyecto
+
+Para ejecutar el proyecto, en el mismo directorio donde se ejecutó la
+compilación e instalación del proyecto, ejecutar:
+
+#+begin_src sh
+mvn tomcat7:run
+#+end_src
+
+Eso se encargará de levantar un servidor *Apache Tomcat* por ustedes y podrán
+probar los cambios hechos en su proyecto.
+
+* Páginas disponibles
+
+localhost:8080/mi-primer-aplicacion-web/
+localhost:8080/mi-primer-aplicacion-web/ejemplo.xhtml
+localhost:8080/mi-primer-aplicacion-web/registro.xhtml
+localhost:8080/mi-primer-aplicacion-web/sigin.xhtml
