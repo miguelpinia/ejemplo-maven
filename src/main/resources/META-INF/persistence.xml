@@ -4,6 +4,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.miguel.proyecto.db.Persona</class>
     <class>com.miguel.proyecto.db.Usuario</class>
+    <class>com.miguel.proyecto.db.Comentario</class>
+    <class>com.miguel.proyecto.db.Lugar</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/miPrimerBase?zeroDateTimeBehavior=convertToNull&amp;amp;nullNamePatternMatchesAll=true"/>
