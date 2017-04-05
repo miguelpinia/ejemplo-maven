@@ -33,10 +33,24 @@ grant all privileges on miPrimerBase.* to miguel@localhost;
 #+end_src
 
 - Nota :: Si quieren cambiar el nombre del usuario, también es necesario hacerlo
-     en el archivo [[file:src/main/resources/META-INF/persistence.xml][persistence.xml.]]
+     en el archivo [[file:src/main/resources/META-INF/persistence.xml][persistence.xml.]] Esto se hace modificando las siguientes
+     líneas.
+
+#+begin_src xml
+   <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mi_base_de_datos"/>
+   <property name="javax.persistence.jdbc.user" value="nombre_usuario"/>
+   <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+   <property name="javax.persistence.jdbc.password" value="mi_contraseña"/>
+#+end_src
 
 Después de eso, hay que cargar el script [[file:sql/modelo.sql][modelo.sql]] para que se construya el
 modelo de la base de datos.
+
+Es posible que el archivo [[file:sql/modelo.sql][modelo.sql]] cambie conforme vamos agregando
+características en el proyecto, por lo apoyándonos de Netbeans, vamos a
+regenerar las distintas clases que representan el modelo, así como sus
+respectivas clases controladoras. Un ejemplo de como hacerlo, se puede observar
+en [[http://wiki.netbeans.org/TS_65_Entity_Classes_From_Database][la wiki de Netbeans.]]
 
 ** Compilando el proyecto
 
@@ -60,7 +74,9 @@ mvn tomcat7:run
 #+end_src
 
 Eso se encargará de levantar un servidor *Apache Tomcat* por ustedes y podrán
-probar los cambios hechos en su proyecto.
+probar los cambios hechos en su proyecto. A partir de este momento, ya tienen un
+servidor ejecutando el proyecto web, el cuál podrán acceder a través del
+navegador de su preferencia.
 
 * Páginas disponibles
 
