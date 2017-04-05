@@ -80,7 +80,11 @@ navegador de su preferencia.
 
 * Páginas disponibles
 
-- localhost:8080/mi-primer-aplicacion-web/
+- localhost:8080/mi-primer-aplicacion-web/ :: Ejemplo sencillo de uso de
+     Servlets y conexión a la base de datos.
 - localhost:8080/mi-primer-aplicacion-web/ejemplo.xhtml
-- localhost:8080/mi-primer-aplicacion-web/registro.xhtml
-- localhost:8080/mi-primer-aplicacion-web/sigin.xhtml
+- localhost:8080/mi-primer-aplicacion-web/registro.xhtml :: Formulario de registro
+- localhost:8080/mi-primer-aplicacion-web/sigin.xhtml :: Inicio de sesión
+- localhost:8080/mi-primer-aplicacion-web/mapa.xhml :: Visualización de mapas y
+     adición/eliminación de markers dentro de google maps más almacenamiento en
+     la base de datos.
