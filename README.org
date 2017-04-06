@@ -44,7 +44,13 @@ grant all privileges on miPrimerBase.* to miguel@localhost;
 #+end_src
 
 Después de eso, hay que cargar el script [[file:sql/modelo.sql][modelo.sql]] para que se construya el
-modelo de la base de datos.
+modelo de la base de datos. Una forma de hacerlo puede ser de la siguiente
+forma:
+
+#+begin_src sh
+mysql -u root -p < modelo.sql
+#+end_src
+
 
 Es posible que el archivo [[file:sql/modelo.sql][modelo.sql]] cambie conforme vamos agregando
 características en el proyecto, por lo apoyándonos de Netbeans, vamos a
