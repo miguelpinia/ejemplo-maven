@@ -11,6 +11,9 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 
+import com.miguel.proyecto.controller.HashSalt;
+import com.miguel.proyecto.controller.PasswordUtil;
+
 /**
  *
  * Bean manejado qué se utiliza para el manejo de inicio de Sesión en
@@ -21,6 +24,8 @@ import javax.servlet.http.HttpServletRequest;
 @ManagedBean // LEER LA DOCUMENTACIÖN DE ESTA ANOTACIÓN: Permite dar de alta al bean en la aplicación
 @RequestScoped // Sólo está disponible a partir de peticiones al bean
 public class Login {
+
+    private final static HashSalt PASSWORD = getDefaultPassword();
 
     private String usuario;
     private String password;
@@ -79,7 +84,7 @@ public class Login {
      * @return El nombre de la vista que va a responder.
      */
     public String login() {
-        if (usuario.equalsIgnoreCase("miguel") && password.equalsIgnoreCase("password")) {
+        if (usuario.equalsIgnoreCase("miguel") && validatePassword()) {
             httpServletRequest.getSession().setAttribute("sessionUsuario", usuario);
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Acceso Correcto", null);
             faceContext.addMessage(null, message);
@@ -88,6 +93,19 @@ public class Login {
         message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario o contraseña incorrecto", null);
         faceContext.addMessage(null, message);
         return "signin";
+    }
+
+    private static HashSalt getDefaultPassword() {
+        try {
+            return PasswordUtil.getHash("password");
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return null;
+    }
+
+    private boolean validatePassword() {
+        return PasswordUtil.validateHash(password, PASSWORD.getHash(), PASSWORD.getSalt());
     }
 
 }
