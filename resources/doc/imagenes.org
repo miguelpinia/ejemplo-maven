@@ -1,0 +1,16 @@
+#+title: Almacenamiento de imágenes
+#+author: Miguel Piña
+#+date: [2017-05-07 dom 16:38]
+
+Para el almacenamiento de imágenes vamos a hacer uso de la estructura blob de
+MySQL.
+
+Agregamos una nueva relación como la siguiente:
+
+#+begin_src sql
+create table if not exists imagen (
+  id serial primary key,
+  datos blob not null,
+  nombre varchar(255) not null unique
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+#+end_src
