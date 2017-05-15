@@ -45,7 +45,7 @@ public class Logout {
         // httpServletRequest.getSession().destroy();
         message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Session cerrada correctamente", null);
         faceContext.addMessage(null, message);
-        return "signin";
+        return "/signin";
     }
 
     /**

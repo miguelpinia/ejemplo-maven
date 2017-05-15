@@ -38,7 +38,6 @@ public class Imagen extends HttpServlet {
         uri = uri.replace(request.getContextPath() + "/", "");
         uri = uri.replace("%20", " ");
         uri = uri.substring(uri.indexOf("/") + 1);
-        System.out.println(uri);
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("MiProyectoPU");
         ImagenJpaController jpa = new ImagenJpaController(emf);
         com.miguel.proyecto.db.Imagen im = jpa.findImagen(uri);
