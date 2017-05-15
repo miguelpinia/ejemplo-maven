@@ -7,6 +7,7 @@
     <class>com.miguel.proyecto.db.Comentario</class>
     <class>com.miguel.proyecto.db.Lugar</class>
     <class>com.miguel.proyecto.db.Imagen</class>
+    <class>com.miguel.proyecto.db.Calificaciones</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/miPrimerBase?zeroDateTimeBehavior=convertToNull&amp;amp;nullNamePatternMatchesAll=true"/>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+  <h:head>
+    <title>Uso de agregados desde SQL</title>
+  </h:head>
+  <h:body style="padding-top: 60px; background-color: #add;">
+    <h1>Uso de agregados de la base de datos</h1>
+    <p:growl id="messages" showDetail="true" />
+    <h:form>
+      <p:fragment autoUpdate="true">
+        <h:panelGrid columns="3" cellpadding="5">
+          <p:outputLabel value="Agrega calificación"/>
+          <p:inputText value="#{agregados.calificacion}"/>
+          <p:commandButton value="Agrega" action="#{agregados.agregaCalificacion()}" update=":messages"/>
+        </h:panelGrid>
+      </p:fragment>
+      <p:fragment autoUpdate="true">
+        <h:panelGrid columns="3" cellpadding="5">
+          <p:outputLabel value="Promedio de calificaciones"/>
+          <p:commandButton value="Obtener promedio" action="#{agregados.obtenPromedio()}"/>
+          <h:outputText value="#{agregados.promedio}"/>
+        </h:panelGrid>
+      </p:fragment>
+      <p:fragment autoUpdate="true">
+        <h:panelGrid columns="3" cellpadding="5">
+          <p:outputLabel value="Suma de calificaciones"/>
+          <p:commandButton value="Obtener suma" action="#{agregados.obtenSuma()}"/>
+          <h:outputLabel value="#{agregados.sumaPromedio}"/>
+        </h:panelGrid>
+      </p:fragment>
+    </h:form>
+  </h:body>
+</html>
+
